@@ -119,7 +119,10 @@ int main() {
     BitBlt(hMemoryDC, 0, 0, width, height, hScreenDC, x1, y1, SRCCOPY);
     hBitmap = (HBITMAP)SelectObject(hMemoryDC, hOldBitmap);
 
-    SaveBitmap(hBitmap, "screenshot.bmp");
+     std::string fileName = "SampleFile" + index;
+ std::string ext = ".bmp";
+ fileName = fileName + ext;
+ SaveBitmap(hBitmap, fileName.c_str());
 
     DeleteDC(hMemoryDC);
     DeleteDC(hScreenDC);
